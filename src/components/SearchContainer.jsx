@@ -5,8 +5,8 @@ import SearchFilter from "./SearchFilter"
 const SearchContainer = () => {
     return (
         <View className="flex-row items-center justify-center  m-4">
-            <SearchInput />
             <SearchFilter />
+            <SearchInput />
         </View>
     )
 }

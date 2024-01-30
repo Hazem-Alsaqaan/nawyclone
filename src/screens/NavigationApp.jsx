@@ -40,46 +40,46 @@ const IncludeUser = () => {
     return (
         <TabNav.Navigator initialRouteName="home">
             <TabNav.Screen
-                name="Home"
-                component={HomeScreenNavigator}
+                name="More"
+                component={MoreScreen}
                 options={{
                     headerShown: false,
-                    tabBarLabel: ({ focused }) => <Text className={focused ? "text-[#245794] font-bold text-[12px]" : "text-[#999] text-[12px]"}>Home</Text>,
-                    tabBarIcon: ({ focused }) => <Entypo name="home" size={24} color={focused ? "#245794" : "#999"} />
-                }}
-            />
-            <TabNav.Screen
-                name="Explore"
-                component={ExploreScreen}
-                options={{
-                    headerShown: false,
-                    tabBarLabel: ({ focused }) => <Text className={focused ? "text-[#245794] font-bold text-[12px]" : "text-[#999] text-[12px]"}>Explore</Text>,
-                    tabBarIcon: ({ focused }) => <MaterialCommunityIcons name="view-grid-plus-outline" size={24} color={focused ? "#245794" : "#999"} />
-                }} />
-            <TabNav.Screen
-                name="Search"
-                component={SearchScreen}
-                options={{
-                    headerShown: false,
-                    tabBarLabel: ({ focused }) => <Text className={focused ? "text-[#245794] font-bold text-[12px]" : "text-[#999] text-[12px]"}>Search</Text>,
-                    tabBarIcon: ({ focused }) => <Octicons name="search" size={24} color={focused ? "#245794" : "#999"} />
+                    tabBarLabel: ({ focused }) => <Text className={focused ? "text-[#245794] font-bold text-[12px]" : "text-[#999] text-[12px]"}>المزيد</Text>,
+                    tabBarIcon: ({ focused }) => <AntDesign name="bars" size={24} color={focused ? "#245794" : "#999"} />
                 }} />
             <TabNav.Screen
                 name="MyProperty"
                 component={MyPropertyScreen}
                 options={{
                     headerShown: false,
-                    tabBarLabel: ({ focused }) => <Text className={focused ? "text-[#245794] font-bold text-[12px]" : "text-[#999] text-[12px]"}>My Property</Text>,
+                    tabBarLabel: ({ focused }) => <Text className={focused ? "text-[#245794] font-bold text-[12px]" : "text-[#999] text-[12px]"}>الشركات</Text>,
                     tabBarIcon: ({ focused }) => <MaterialIcons name="apartment" size={24} color={focused ? "#245794" : "#999"} />
                 }} />
             <TabNav.Screen
-                name="More"
-                component={MoreScreen}
+                name="Search"
+                component={SearchScreen}
                 options={{
                     headerShown: false,
-                    tabBarLabel: ({ focused }) => <Text className={focused ? "text-[#245794] font-bold text-[12px]" : "text-[#999] text-[12px]"}>More</Text>,
-                    tabBarIcon: ({ focused }) => <AntDesign name="bars" size={24} color={focused ? "#245794" : "#999"} />
+                    tabBarLabel: ({ focused }) => <Text className={focused ? "text-[#245794] font-bold text-[12px]" : "text-[#999] text-[12px]"}>البحث</Text>,
+                    tabBarIcon: ({ focused }) => <Octicons name="search" size={24} color={focused ? "#245794" : "#999"} />
                 }} />
+            <TabNav.Screen
+                name="Explore"
+                component={ExploreScreen}
+                options={{
+                    headerShown: false,
+                    tabBarLabel: ({ focused }) => <Text className={focused ? "text-[#245794] font-bold text-[12px]" : "text-[#999] text-[12px]"}>اكتشف</Text>,
+                    tabBarIcon: ({ focused }) => <MaterialCommunityIcons name="view-grid-plus-outline" size={24} color={focused ? "#245794" : "#999"} />
+                }} />
+            <TabNav.Screen
+                name="Home"
+                component={HomeScreenNavigator}
+                options={{
+                    headerShown: false,
+                    tabBarLabel: ({ focused }) => <Text className={focused ? "text-[#245794] font-bold text-[12px]" : "text-[#999] text-[12px]"}>الرئيسية</Text>,
+                    tabBarIcon: ({ focused }) => <Entypo name="home" size={24} color={focused ? "#245794" : "#999"} />
+                }}
+            />
         </TabNav.Navigator>
     )
 }
@@ -90,6 +90,7 @@ const NavigationApp = () => {
         username: "hazem",
         email: "zimmwa@gmail.com"
     }
+
     return (
         <NavigationContainer>
             {Object.keys(currentUser).length > 0

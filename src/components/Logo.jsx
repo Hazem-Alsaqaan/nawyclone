@@ -3,11 +3,11 @@ import { Image, Text, View } from "react-native"
 const Logo = ({ pageName }) => {
     return (
         <View className="flex-row items-center justify-center">
+            <Text className="text-xl text-[#245794] font-[900] mx-1">{pageName ? pageName : ""}</Text>
             <Image
-                source={require("../../assets/logo.jpg")}
+                source={require("../../assets/logo.png")}
                 className="w-5 h-5"
             />
-            <Text className="text-xl text-[#245794] font-bold mx-0.5">{pageName ? pageName : ""}</Text>
         </View>
     )
 }
