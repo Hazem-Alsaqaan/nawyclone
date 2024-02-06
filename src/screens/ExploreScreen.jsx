@@ -1,5 +1,6 @@
 import { SafeAreaView, Text, View } from "react-native"
 import Header from "../components/Header"
+import ModelComponenets from "../components/ModelComponents"
 
 const ExploreScreen = () => {
     return (
@@ -8,6 +9,7 @@ const ExploreScreen = () => {
             <View className="flex items-center justify-center">
                 <Text>Explore Screen</Text>
             </View>
+            <ModelComponenets />
         </SafeAreaView>
     )
 }

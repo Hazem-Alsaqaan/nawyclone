@@ -1,34 +1,18 @@
-import { Image, ImageBackground, PixelRatio, SafeAreaView, ScrollView, Text, TouchableOpacity, View } from "react-native"
+import { Image, PixelRatio, SafeAreaView, ScrollView, Text, TouchableOpacity, View } from "react-native"
 import Header from "../components/Header"
 import CompaniesList from "../components/CompaniesList"
 import SearchContainer from "../components/SearchContainer"
 import { useNavigation } from "@react-navigation/native"
 import Categories from "../components/Categories"
+import AboutUsSlider from "../components/AboutUsSlider"
 
 const HomeScreen = () => {
     const Navigation = useNavigation()
     const fontScale = PixelRatio.getFontScale()
     return (
         <SafeAreaView className="bg-white">
-            <Header pageName="امازون بلدنا" />
-            {/* Limited Time Offers Component */}
-            <View className="bg-yellow-500 overflow-hidden mx-4 rounded-xl">
-                <ImageBackground
-                    source={{ uri: "https://img.freepik.com/free-vector/hand-drawn-flat-design-blackout-illustration_23-2149253383.jpg?w=826&t=st=1705420076~exp=1705420676~hmac=051eaf28b5365b96e307c4252b2e311b61fcee19a6d09a8866def0d21486031d" }}
-                    resizeMode="cover"
-                    className="h-32 p-4 flex-row items-center justify-between">
-                    <View className="flex-1">
-                        <View className="flex items-start">
-                            <Text className="text-orange-400 text-2xl font-[900]">اعرض متجرك عندنا</Text>
-                            <Text className="text-lg font-bold text-white">سيب التسويق علينا</Text>
-                        </View>
-                    </View>
-                    <View className="h-32 bg-yellow-500 p-2 flex items-center justify-center">
-                        <Text className="text-white tracking-[2px] font-extrabold text-lg">صفقات</Text>
-                        <Text className="text-white font-bold text-base tracking-wide">خاصة</Text>
-                    </View>
-                </ImageBackground>
-            </View>
+            <Header pageName="circle" />
+            <AboutUsSlider />
             <ScrollView >
                 <SearchContainer />
                 <Categories />

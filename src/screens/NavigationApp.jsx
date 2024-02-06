@@ -7,13 +7,18 @@ import SearchScreen from "./SearchScreen"
 import MyPropertyScreen from "./MyPropertyScreen"
 import ExploreScreen from "./ExploreScreen"
 import MoreScreen from "./MoreScreen"
-import { Text } from "react-native"
+import { Text, View } from "react-native"
 import { Entypo } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Octicons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import SearchFilterScreen from "./SearchFilterScreen"
+import Companies from "../components/Companies"
+import FathallaCategories from "../components/FathallaCategories"
+import { useSelector } from "react-redux"
+import NikeCategories from "../components/NikeCategories"
+import Products from "../components/Products"
 
 const StackNav = createNativeStackNavigator()
 const HomeStack = createNativeStackNavigator()
@@ -28,17 +33,22 @@ const WithoutUser = () => {
 }
 // Home Screen Navigator
 const HomeScreenNavigator = () => {
+    const { companiesList } = useSelector((state) => state.publicStatesSlice)
     return (
         <HomeStack.Navigator initialRouteName="homeScreen">
             <HomeStack.Screen name="homeScreen" component={HomeScreen} options={{ headerShown: false, }} />
             <HomeStack.Screen name="searchFilterScreen" component={SearchFilterScreen} options={{ headerShown: false, }} />
+            <HomeStack.Screen name="المتاجر" component={Companies} />
+            <HomeStack.Screen name="فتح الله" component={FathallaCategories} />
+            <HomeStack.Screen name="nike" component={NikeCategories} />
+            <HomeStack.Screen name="المنتجات" component={Products} />
         </HomeStack.Navigator>
     )
 }
 // if user logedin
 const IncludeUser = () => {
     return (
-        <TabNav.Navigator initialRouteName="home">
+        <TabNav.Navigator initialRouteName="Home">
             <TabNav.Screen
                 name="More"
                 component={MoreScreen}
